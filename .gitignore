@@ -16,3 +16,4 @@ captures/
 cue_sheets/
 portfolio_gradle_cache/
 .portfolio-gradle-cache/
+.serena/

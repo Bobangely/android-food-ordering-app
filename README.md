@@ -1,76 +1,87 @@
-# FlyFood — Android Food Ordering App
+# แอปพลิเคชันสั่งอาหาร FlyFood
 
-FlyFood is a native Android food-ordering demo built with Kotlin and XML layouts. It demonstrates a complete local ordering flow: browse food, add items to a cart, adjust quantities, view promotions, and confirm an order.
+โปรเจกต์นี้เป็นแอปพลิเคชันสั่งอาหารบนระบบ Android ที่ผมทำขึ้นเพื่อฝึกเขียนโปรแกรมด้วยภาษา Kotlin และฝึกออกแบบหน้าจอด้วย XML โดยภายในแอปจะมีเมนูอาหาร หน้าโปรโมชั่น และระบบตะกร้าสินค้า
 
-> Portfolio project: this app is an offline prototype. Authentication, payment, and order submission are simulated locally and are not connected to a production backend.
+แอปนี้เป็นโปรเจกต์ทดลอง ข้อมูลต่าง ๆ จะถูกเก็บไว้ในเครื่องด้วย SQLite ยังไม่ได้เชื่อมต่อกับเซิร์ฟเวอร์ ระบบชำระเงินจริง หรือระบบจัดส่งอาหารจริง
 
-## Screenshots
+## วัตถุประสงค์ของโปรเจกต์
 
-| Login | Home | Promotion |
+- เพื่อฝึกสร้างแอปพลิเคชัน Android ด้วยภาษา Kotlin
+- เพื่อฝึกออกแบบหน้าจอและจัดวางองค์ประกอบด้วย XML
+- เพื่อศึกษาการส่งข้อมูลและเปลี่ยนหน้าด้วย Activity และ Intent
+- เพื่อฝึกเก็บและจัดการข้อมูลภายในเครื่องด้วย SQLite
+- เพื่อทดลองทำระบบตะกร้าสินค้าและคำนวณราคาอาหาร
+
+## รูปภาพตัวอย่าง
+
+| หน้าเข้าสู่ระบบ | หน้าหลัก | หน้าโปรโมชั่น |
 | --- | --- | --- |
-| <img src="docs/screenshots/login.png" width="240" alt="FlyFood login screen"> | <img src="docs/screenshots/home.png" width="240" alt="FlyFood home screen"> | <img src="docs/screenshots/promotion.png" width="240" alt="FlyFood promotion screen"> |
+| <img src="docs/screenshots/login.png" width="240" alt="หน้าเข้าสู่ระบบ"> | <img src="docs/screenshots/home.png" width="240" alt="หน้าหลัก"> | <img src="docs/screenshots/promotion.png" width="240" alt="หน้าโปรโมชั่น"> |
 
-| Takeaway | Cart | Order confirmation |
+| หน้าสั่งกลับบ้าน | หน้าตะกร้า | หน้ายืนยันคำสั่งซื้อ |
 | --- | --- | --- |
-| <img src="docs/screenshots/takeaway.png" width="240" alt="FlyFood takeaway screen"> | <img src="docs/screenshots/cart.png" width="240" alt="FlyFood cart screen"> | <img src="docs/screenshots/order-confirmation.png" width="240" alt="FlyFood order confirmation screen"> |
+| <img src="docs/screenshots/takeaway.png" width="240" alt="หน้าสั่งกลับบ้าน"> | <img src="docs/screenshots/cart.png" width="240" alt="หน้าตะกร้า"> | <img src="docs/screenshots/order-confirmation.png" width="240" alt="หน้ายืนยันคำสั่งซื้อ"> |
 
-## Features
+## ความสามารถของแอป
 
-- Login, guest access, and registration screens
-- Food menu and category browsing
-- Promotional menu selection
-- Add-to-cart flow with persistent local storage
-- Increase and decrease item quantities
-- Automatic subtotal, 5% tax, and total calculation
-- Clear-cart and order-confirmation dialogs
-- Screen transitions and interaction animations
-- Thai-language ordering experience
+- มีหน้าเข้าสู่ระบบ สมัครสมาชิก และเข้าใช้งานแบบ Guest
+- แสดงรายการอาหารและหมวดหมู่อาหาร
+- มีหน้าแสดงรายการโปรโมชั่น
+- สามารถเพิ่มอาหารลงในตะกร้าได้
+- สามารถเพิ่มหรือลดจำนวนสินค้าในตะกร้าได้
+- บันทึกข้อมูลตะกร้าไว้ใน SQLite
+- คำนวณราคารวม ภาษี 5% และราคาสุทธิ
+- สามารถลบรายการอาหารทั้งหมดออกจากตะกร้าได้
+- มีหน้าต่างยืนยันก่อนสั่งซื้อหรือลบสินค้า
+- มี Animation ตอนเปลี่ยนหน้าและกดปุ่มบางส่วน
 
-## Tech stack
+## เครื่องมือที่ใช้
 
-- Kotlin
-- Android SDK (min SDK 24, target SDK 36)
-- XML layouts and Android Views
-- SQLite with `SQLiteOpenHelper`
-- Material Components and AndroidX
+- Android Studio
+- ภาษา Kotlin
+- XML Layout
+- SQLite Database
+- AndroidX และ Material Components
 - Gradle Kotlin DSL
 
-## Project structure
+## โครงสร้างโปรเจกต์โดยย่อ
 
 ```text
 app/src/main/
-├── java/com/example/flyfood/   # Activities, cart logic, SQLite helper
-├── res/layout/                 # Screen and list-item layouts
-├── res/drawable/               # Images and custom drawable resources
-├── res/anim/                   # UI animations
-└── AndroidManifest.xml
+├── java/com/example/flyfood/   # ไฟล์ Kotlin และการทำงานของแต่ละหน้า
+├── res/layout/                 # ไฟล์ออกแบบหน้าจอ
+├── res/drawable/               # รูปภาพและพื้นหลังต่าง ๆ
+├── res/anim/                   # ไฟล์ Animation
+└── AndroidManifest.xml         # กำหนด Activity ภายในแอป
 ```
 
-## Run locally
+## วิธีเปิดโปรเจกต์
 
-1. Clone this repository.
-2. Open the project in Android Studio.
-3. Let Gradle sync the dependencies.
-4. Run the `app` configuration on an Android emulator or device running Android 7.0 (API 24) or newer.
+1. ดาวน์โหลดหรือ Clone โปรเจกต์นี้ลงในเครื่อง
+2. เปิดโฟลเดอร์โปรเจกต์ด้วย Android Studio
+3. รอให้โปรแกรม Gradle Sync ให้เสร็จ
+4. เปิด Emulator หรือเชื่อมต่อโทรศัพท์ Android
+5. กดปุ่ม Run เพื่อทดลองใช้งานแอป
 
-Command-line build on Windows:
+โปรเจกต์กำหนด Android ขั้นต่ำไว้ที่ Android 7.0 หรือ API 24
+
+ถ้าต้องการทดสอบ Build บน Windows สามารถใช้คำสั่งนี้ได้
 
 ```powershell
 .\gradlew.bat assembleDebug
 ```
 
-## What I learned
+## สิ่งที่ได้เรียนรู้จากการทำโปรเจกต์
 
-- Building multi-screen Android applications with Activities and Intents
-- Designing responsive interfaces with XML layouts
-- Persisting and updating cart data in SQLite
-- Implementing reusable list adapters and user interaction feedback
-- Managing Android resources, animations, and Gradle dependencies
+จากการทำโปรเจกต์นี้ ผมได้ฝึกสร้างแอปที่มีหลายหน้า การใช้ Intent เพื่อเปลี่ยนหน้า การรับค่าจากปุ่มและช่องกรอกข้อมูล รวมถึงการใช้ SQLite สำหรับเก็บรายการอาหารในตะกร้า
 
-## Future improvements
+ส่วนที่ใช้เวลาทำค่อนข้างมากคือระบบตะกร้า เพราะต้องคอยอัปเดตจำนวนสินค้า ราคา ภาษี และยอดรวมให้ตรงกัน รวมถึงต้องทำให้ข้อมูลยังอยู่เมื่อเปลี่ยนไปหน้าอื่น
 
-- Replace the local login prototype with secure authentication
-- Add a REST API and cloud-backed order history
-- Integrate a real payment provider
-- Migrate UI state to ViewModel/StateFlow and adopt a layered architecture
-- Add unit, database, and UI tests for the ordering flow
+## สิ่งที่อยากพัฒนาต่อ
+
+- ทำระบบสมัครสมาชิกและเข้าสู่ระบบให้เก็บข้อมูลได้จริง
+- เชื่อมต่อ API หรือฐานข้อมูลออนไลน์
+- เพิ่มประวัติการสั่งซื้อ
+- เพิ่มระบบค้นหาและกรองประเภทอาหาร
+- เพิ่มระบบชำระเงิน
+- ปรับโครงสร้างโค้ดให้เป็นระเบียบและเพิ่มการทดสอบ
