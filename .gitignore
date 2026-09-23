@@ -1,0 +1,18 @@
+*.iml
+.gradle/
+.idea/
+**/build/
+local.properties
+captures/
+.externalNativeBuild/
+.cxx/
+*.apk
+*.aab
+.DS_Store
+
+# Local packaging, reports, and duplicated coursework source files
+2310511101084.rar
+2310511101084/
+cue_sheets/
+portfolio_gradle_cache/
+.portfolio-gradle-cache/

@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="72dp"
+    android:orientation="horizontal"
+    android:padding="8dp"
+    android:gravity="center_vertical">
+
+    <ImageView
+        android:id="@+id/menu_image"
+        android:layout_width="56dp"
+        android:layout_height="56dp"
+        android:scaleType="centerCrop"
+        android:src="@drawable/pizza1"
+        android:contentDescription="Menu image"
+        android:background="@drawable/rounded_image" />
+
+    <LinearLayout
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        android:orientation="vertical"
+        android:paddingStart="8dp">
+
+        <TextView
+            android:id="@+id/menu_title"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Menu name"
+            android:textStyle="bold"
+            android:textColor="#222"
+            android:textSize="14sp"
+            android:maxLines="1"
+            android:ellipsize="end" />
+
+        <TextView
+            android:id="@+id/menu_price"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="฿0.00"
+            android:textColor="#E53935"
+            android:textSize="13sp"
+            android:layout_marginTop="4dp" />
+    </LinearLayout>
+
+    <ImageButton
+        android:id="@+id/menu_add"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:src="@android:drawable/ic_input_add"
+        android:tint="#0B6E4F"
+        android:background="?attr/selectableItemBackgroundBorderless"
+        android:contentDescription="Add" />
+
+</LinearLayout>

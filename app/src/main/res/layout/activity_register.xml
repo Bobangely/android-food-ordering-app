@@ -1,0 +1,132 @@
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#F5F5F5"
+    android:padding="24dp">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:gravity="center_horizontal">
+
+
+        <ImageView
+            android:id="@+id/Logo"
+            android:src="@drawable/logo"
+            android:layout_width="120dp"
+            android:layout_height="120dp"
+            android:layout_marginBottom="10dp" />
+
+
+        <TextView
+            android:text="Register Food Fly"
+            android:textSize="35sp"
+            android:textStyle="bold"
+            android:textColor="#333"
+            android:layout_marginBottom="24dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/bg_white_soft"
+            android:padding="24dp"
+            android:elevation="6dp"
+            android:orientation="vertical"
+            android:layout_marginBottom="24dp">
+
+
+            <EditText
+                android:id="@+id/et_name"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/rounded_edittext"
+                android:hint="ชื่อ"
+                android:textStyle="bold"
+                android:padding="16dp"
+                android:layout_marginBottom="12dp" />
+
+
+            <EditText
+                android:id="@+id/et_email"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/rounded_edittext"
+                android:hint="อีเมล"
+                android:textStyle="bold"
+                android:inputType="textEmailAddress"
+                android:padding="16dp"
+                android:layout_marginBottom="12dp" />
+
+
+            <EditText
+                android:id="@+id/et_password"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/rounded_edittext"
+                android:hint="รหัสผ่าน"
+                android:textStyle="bold"
+                android:inputType="textPassword"
+                android:padding="16dp"
+                android:layout_marginBottom="12dp" />
+
+
+            <EditText
+                android:id="@+id/et_confirm_password"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/rounded_edittext"
+                android:hint="ยืนยันรหัสผ่าน"
+                android:textStyle="bold"
+                android:inputType="textPassword"
+                android:padding="16dp"
+                android:layout_marginBottom="12dp" />
+
+
+            <EditText
+                android:id="@+id/et_address"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/rounded_edittext"
+                android:hint="ที่อยู่"
+                android:textStyle="bold"
+                android:inputType="text"
+                android:padding="16dp"
+                android:layout_marginBottom="12dp" />
+
+
+            <CheckBox
+                android:id="@+id/cb_terms"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="ฉันยอมรับเงื่อนไขการใช้งาน"
+                android:layout_marginBottom="16dp"/>
+
+
+            <Button
+                android:id="@+id/btn_register"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:text="สมัครสมาชิก"
+                android:textColor="#FFF"
+                android:textStyle="bold"
+                android:backgroundTint="#F3C851"
+                android:layout_marginBottom="16dp" />
+
+
+            <TextView
+                android:gravity="center_horizontal"
+                android:text="มีบัญชีแล้ว? เข้าสู่ระบบ"
+                android:textColor="#888"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="16dp" />
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+</ScrollView>
